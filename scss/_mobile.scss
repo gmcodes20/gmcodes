@@ -86,12 +86,46 @@
 
 // Smartphones
 @include mediaSm {
-  .projects {
-    .languages {
-      font-size: 0.5rem;
-      margin: 0.2rem 0;
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-weight: 200;
+
+    &.lg-heading {
+      font-size: 2rem;
+      line-height: 1;
     }
+    &.sm-heading {
+      font-size: 0.8rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  #about {
+    .bio {
+      font-size: 0.8rem;
+    }
+  }
+
+  .menu {
+    .nav-link {
+      font-size: 24px;
+    }
+  }
+  .projects {
     grid-template-columns: 1fr;
+  }
+  .languages {
+    font-size: 0.2rem;
+    h2 {
+      margin: 15px 0;
+    }
+    font-size: 0.5rem;
+    margin: 0.2rem 0;
+    .card {
+      margin: 10px;
+    }
   }
 
   main {
