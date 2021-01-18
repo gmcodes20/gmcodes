@@ -1,0 +1,376 @@
+@import "config";
+@import "menu";
+
+// Animations
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  @include background();
+  background-color: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+}
+
+// headings
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 8rem;
+    line-height: 1;
+  }
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem irem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+  &.smm-heading {
+    position: relative;
+    margin-left: 4rem;
+    color: $secondary-color;
+    padding: 0.2rem irem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+    @include easeOut;
+    animation: slideInFromLeft 3s ease-in-out;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+  display: block;
+}
+
+main {
+  padding: 4rem;
+  // height: 100%;
+  min-height: calc(100vh - 60px);
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+      color: set-text-color($primary-color);
+
+      &:hover {
+        color: $secondary-color;
+
+        @include easeOut;
+      }
+
+      i:hover {
+        transform: translateY(-10px);
+        @include easeOut;
+      }
+    }
+  }
+  &#home {
+    overflow: hidden;
+
+    .lg-heading {
+      animation: slideInFromLeft 3s ease-in;
+    }
+    .sm-heading {
+      animation: slideInFromRight 3s ease-in;
+    }
+    .smm-heading {
+      margin-top: 20vh;
+    }
+  }
+
+  //  {
+  //   img {
+  //     display: block;
+  //     max-width: 100%;
+  //     box-shadow: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+  //       0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+  //   }
+  // }
+}
+
+// About page grid
+
+#about {
+  .lg-heading {
+    animation: slideInFromLeft 2s ease-in;
+  }
+  .sm-heading {
+    animation: slideInFromRight 2s ease-in;
+  }
+  span {
+    display: inline;
+  }
+}
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    border: 3px solid $secondary-color;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+  .job-2 {
+    grid-area: job2;
+  }
+  .job-3 {
+    grid-area: job3;
+  }
+
+  .job {
+    animation: slideInFromBottom 1s ease-in;
+    background: lighten($primary-color, $amount: 5);
+    padding: 0.5rem;
+    border-bottom: 6px solid $secondary-color;
+    // max-width: 300px;
+    // min-width: 200px;
+
+    h3,
+    h6,
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Works/projects
+
+#work {
+  span {
+    display: inline;
+  }
+}
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(4, 1fr);
+
+  // .item {
+  //   overflow: hidden;
+
+  // &:hover {
+  //   @include easeOut;
+  //   // transform: scale(0.9);
+  // }
+  // }
+
+  img {
+    width: 100%;
+    border: #fff solid 3px;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+
+      @include easeOut;
+    }
+  }
+}
+
+// contact page
+
+#contact {
+  span {
+    display: inline;
+  }
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    div {
+      font-size: 2rem;
+      border: 3px solid #fff;
+      padding: 1.5rem 2.5rem;
+      margin-bottom: 3rem;
+      @include easeOut;
+      &:hover {
+        padding: 00.5rem 1.5rem;
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+        span {
+          color: set-text-color($secondary-color);
+        }
+      }
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, $amount: 50);
+  color: #fff;
+}
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, $amount: 50);
+  color: #333;
+}
+
+.main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 200px;
+
+  .f-write {
+    margin-bottom: 4rem;
+  }
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+      color: set-text-color($primary-color);
+
+      &:hover {
+        color: $secondary-color;
+
+        @include easeOut;
+      }
+
+      i:hover {
+        transform: translateY(-10px);
+        @include easeOut;
+      }
+    }
+  }
+}
+
+/* Languages */
+
+.languages {
+  font-size: 1rem;
+  margin: 1rem 0;
+  h2 {
+    text-align: center;
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+
+  .card {
+    background-color: white;
+    color: darken($secondary-color, 10);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    margin: 18px 10px 40px;
+    @include easeOut;
+
+    h4 {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    &:hover {
+      @include easeOut;
+      transform: translateY(-15px);
+      // scale: 0.8;
+    }
+  }
+
+  .flex {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@import "mobile";
