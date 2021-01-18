@@ -301,6 +301,7 @@ main {
   background: darken($primary-color, 10);
   color: set-text-color($primary-color);
   height: 200px;
+  width: 100%;
 
   .f-write {
     margin-bottom: 4rem;

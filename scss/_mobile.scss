@@ -87,18 +87,32 @@
 // Smartphones
 @include mediaSm {
   .projects {
+    .languages {
+      font-size: 0.5rem;
+      margin: 0.2rem 0;
+    }
     grid-template-columns: 1fr;
   }
-  main#home h1 {
-    font-size: 2.5rem;
-    margin-top: 10vh;
 
-    .text-secondary {
-      display: inline;
+  main {
+    &#home .smm-heading {
+      margin-top: 10vh;
+      font-size: 0.8rem;
     }
-  }
+    &#home h1 {
+      font-size: 3rem;
 
-  main#home h2 {
-    font-size: 0.8rem;
+      .text-secondary {
+        display: inline;
+      }
+    }
+
+    &#home h2 {
+      font-size: 0.8rem;
+    }
+
+    .icons {
+      font-size: 0.5rem;
+    }
   }
 }
