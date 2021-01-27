@@ -58,7 +58,6 @@
   .menu-nav {
     height: 75vh;
     transform: translate3d(-100%, 0, 0);
-    font-size: 24px;
   }
 
   .menu-branding {
@@ -81,6 +80,31 @@
       "job2"
       "job3";
     grid-template-columns: 1fr;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 300;
+
+    &.lg-heading {
+      font-size: 6rem;
+    }
+    &.sm-heading {
+      margin-bottom: 1rem;
+      padding: 0.2rem irem;
+      background: rgba(lighten($primary-color, 2), 0.5);
+    }
+    &.smm-heading {
+      margin-left: 0;
+
+      background: rgba(lighten($primary-color, 2), 0.5);
+      @include easeOut;
+    }
+  }
+
+  main .icons {
+    font-size: 10px;
   }
 }
 
@@ -110,7 +134,7 @@
 
   .menu {
     .nav-link {
-      font-size: 24px;
+      font-size: 20px;
     }
   }
   .projects {

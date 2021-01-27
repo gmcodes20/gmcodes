@@ -74,10 +74,9 @@ h3 {
     position: relative;
     margin-left: 4rem;
     color: $secondary-color;
-    padding: 0.2rem irem;
+    padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color, 2), 0.5);
     @include easeOut;
-    animation: slideInFromLeft 3s ease-in-out;
   }
 }
 
@@ -94,12 +93,12 @@ header {
 
 .text-secondary {
   color: $secondary-color;
-  display: block;
+  display: inline;
 }
 
 main {
   padding: 4rem;
-  // height: 100%;
+  height: 100%;
   min-height: calc(100vh - 60px);
 
   .icons {
@@ -116,20 +115,14 @@ main {
       }
 
       i:hover {
-        transform: translateY(-10px);
         @include easeOut;
+        transform: translateY(-10px);
       }
     }
   }
   &#home {
     overflow: hidden;
 
-    .lg-heading {
-      animation: slideInFromLeft 3s ease-in;
-    }
-    .sm-heading {
-      animation: slideInFromRight 3s ease-in;
-    }
     .smm-heading {
       margin-top: 20vh;
     }
@@ -148,12 +141,6 @@ main {
 // About page grid
 
 #about {
-  .lg-heading {
-    animation: slideInFromLeft 2s ease-in;
-  }
-  .sm-heading {
-    animation: slideInFromRight 2s ease-in;
-  }
   span {
     display: inline;
   }
@@ -191,7 +178,6 @@ main {
   }
 
   .job {
-    animation: slideInFromBottom 1s ease-in;
     background: lighten($primary-color, $amount: 5);
     padding: 0.5rem;
     border-bottom: 6px solid $secondary-color;
@@ -229,7 +215,8 @@ main {
   // }
 
   img {
-    width: 100%;
+    width: 300px;
+    height: 250px;
     border: #fff solid 3px;
 
     &:hover {
@@ -250,7 +237,7 @@ main {
   .boxes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: 1rem;
 
@@ -331,9 +318,10 @@ main {
 /* Languages */
 
 .languages {
-  font-size: 0.5rem;
-  margin: 1rem 0;
+  font-size: 0.2rem;
+  margin: 0.5rem 0;
   h2 {
+    font-size: 1rem;
     text-align: center;
     background: $secondary-color;
     color: set-text-color($secondary-color);
@@ -344,9 +332,9 @@ main {
     color: darken($secondary-color, 10);
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    margin: 8px 5px 10px;
+    margin: 10px 4px 6px;
     @include easeOut;
 
     h4 {
@@ -358,7 +346,7 @@ main {
 
     &:hover {
       @include easeOut;
-      transform: translateY(-15px);
+      transform: translateY(-10px);
       // scale: 0.8;
     }
   }
