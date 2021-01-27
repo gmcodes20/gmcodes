@@ -56,6 +56,7 @@
   }
 
   .menu-nav {
+    align-items: center;
     height: 75vh;
     transform: translate3d(-100%, 0, 0);
   }
@@ -73,12 +74,6 @@
   }
 
   .about-info {
-    grid-template-areas:
-      "bioimage"
-      "bio"
-      "job1"
-      "job2"
-      "job3";
     grid-template-columns: 1fr;
   }
 

@@ -1,7 +1,7 @@
 .menu-btn {
   position: absolute;
   z-index: 3;
-  right: 35px;
+  right: 10px;
   top: 35px;
   cursor: pointer;
   transition: all 0.5s ease-out; }
@@ -239,6 +239,7 @@ main {
 
 .projects {
   display: grid;
+  justify-content: center;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(4, 1fr); }
   .projects img {
@@ -380,6 +381,7 @@ main {
     div.menu-branding.show {
       transform: translate3d(0, 0, 0); }
   .menu-nav {
+    align-items: center;
     height: 75vh;
     transform: translate3d(-100%, 0, 0); }
   .menu-branding {
@@ -391,7 +393,6 @@ main {
       width: 150px;
       height: 150px; }
   .about-info {
-    grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
     grid-template-columns: 1fr; }
   h1,
   h2,
