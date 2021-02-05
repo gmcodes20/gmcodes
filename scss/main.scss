@@ -203,17 +203,28 @@ main {
 .projects {
   display: grid;
   justify-content: center;
+  align-items: center;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(4, 1fr);
 
-  // .item {
-  //   overflow: hidden;
+  .item {
+    border: $secondary-color solid 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+    .btn-dark,
+    .btn-light {
+      width: 18rem;
+    }
+    // overflow: hidden;
 
-  // &:hover {
-  //   @include easeOut;
-  //   // transform: scale(0.9);
-  // }
-  // }
+    // &:hover {
+    //   @include easeOut;
+    //   // transform: scale(0.9);
+    // }
+  }
 
   img {
     width: 300px;
@@ -262,9 +273,10 @@ main {
 
 // Button Styles
 .btn {
-  display: block;
+  display: inline;
   padding: 0.5rem 1rem;
   border: 0;
+
   margin-bottom: 0.3rem;
   &:hover {
     background: $secondary-color;

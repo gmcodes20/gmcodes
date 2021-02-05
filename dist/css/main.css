@@ -240,8 +240,19 @@ main {
 .projects {
   display: grid;
   justify-content: center;
+  align-items: center;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(4, 1fr); }
+  .projects .item {
+    border: #39dfe1 solid 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff; }
+    .projects .item .btn-dark,
+    .projects .item .btn-light {
+      width: 18rem; }
   .projects img {
     width: 300px;
     height: 250px;
@@ -274,7 +285,7 @@ main {
         color: #000; }
 
 .btn, .btn-dark, .btn-light {
-  display: block;
+  display: inline;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem; }
